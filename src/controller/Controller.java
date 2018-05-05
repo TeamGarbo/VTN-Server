@@ -57,6 +57,8 @@ public class Controller {
         			IP = ip;
         			QRCodeManager.createIPQR(ip, 250, 250);
         			mainView.initView();
+        			
+        			
         		}catch(Exception e) {
         			System.err.println(e.getMessage());;
         		}

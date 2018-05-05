@@ -32,7 +32,7 @@ public class Server {
         ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors() * 2);
         ServerSocket serverSocket = null;
         try {
-            serverSocket = new ServerSocket(1080);
+            serverSocket = new ServerSocket(4444);
             System.out.println("Server: started!");
 
             while (true) {
