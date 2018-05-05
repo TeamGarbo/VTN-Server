@@ -4,16 +4,10 @@ import java.io.Serializable;
 
 public abstract class Message implements Serializable{
 
-	String clubID;
 	String playerID;
 
-	public Message(	String clubID, String playerID){
-		this.clubID = clubID;
+	public Message(	String playerID){
 		this.playerID = playerID;
-	}
-	
-	public String getClubID() {
-		return clubID;
 	}
 	public String getPlayerID() {
 		return playerID;

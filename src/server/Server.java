@@ -32,7 +32,7 @@ public class Server {
         ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors() * 2);
         ServerSocket serverSocket = null;
         try {
-            serverSocket = new ServerSocket(4444);
+            serverSocket = new ServerSocket(1080);
             System.out.println("Server: started!");
 
             while (true) {
@@ -47,10 +47,11 @@ public class Server {
     }
 
     public void passMessage(Message message, ConnectionHandler handler) {
-/*        if (message instanceof InitialMessage) {
+        if (message instanceof Message) {
             userID_connection.put(message.getPlayerID(), handler);
             connection_userID.put(handler, message.getPlayerID());
-        }*/
+        }
+        System.out.println("Player Connected!");
 
         Controller.getInstance().processMessage(message);
     }

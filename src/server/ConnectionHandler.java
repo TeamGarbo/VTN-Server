@@ -14,12 +14,15 @@ public class ConnectionHandler implements Runnable {
     public ConnectionHandler(Socket socket, Server server){
         this.socket = socket;
         this.server = server;
+        
         try {
             outputStream = new ObjectOutputStream(socket.getOutputStream());
             inputStream = new ObjectInputStream(socket.getInputStream());
         }catch(IOException e){
             e.printStackTrace();
         }
+        
+        System.out.println("New Player Connected!");
     }
 
     public void run(){
